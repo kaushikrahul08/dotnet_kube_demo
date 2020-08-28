@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sampleapp-deployment
+  name: webapplication2-deployment
   labels:
-    app: sampleapp
+    app: webapplication2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sampleapp
+      app: webapplication2
   template:
     metadata:
       labels:
-        app: sampleapp
+        app: webapplication2
     spec:
       containers:
-      - name: sampleapp
-        image: aksregus.azurecr.io/sampleapp:v3
+      - name: webapplication2
+        image: aksregus.azurecr.io/webapplication2:dev
         ports:
-        - containerPort: 8000
+        - containerPort: 8085
